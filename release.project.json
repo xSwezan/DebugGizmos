@@ -1,6 +1,6 @@
 {
-	"name": "ModuleName",
-	"servePlaceIds": [],
+	"name": "DebugGizmos",
+	"servePlaceIds": [13286742005],
 	"tree": {
 		"$className": "DataModel",
 		"ReplicatedStorage": {
