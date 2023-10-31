@@ -1,10 +1,10 @@
-local ProximityPromptService = game:GetService("ProximityPromptService")
 local Types = {}
 
 export type lib = {
 	Line: (Props: LineProps) -> LineGizmo;
 	Cone: (Props: ConeProps) -> ConeGizmo;
 	Sphere: (Props: SphereProps) -> SphereGizmo;
+	Text: (Props: TextProps) -> TextGizmo;
 }
 
 export type Gizmo<Class,Props> = Class & {
