@@ -13,6 +13,8 @@ return function(Props: {}): PubTypes.SphereGizmo
 
 		Color = Color3.fromRGB();
 		Transparency = .25;
+
+		Visible = true;
 	}
 
 	self:Apply(Props)
@@ -31,7 +33,7 @@ return function(Props: {}): PubTypes.SphereGizmo
 
 		Adornment.CFrame = CFrame.new(self.Props.Position)
 
-		Adornment.Visible = (Visible == true)
+		Adornment.Visible = (Visible == true) and (self.Props.Visible)
 
 		Adornment.Adornee = Terrain
 		Adornment.Parent = GetOutput()

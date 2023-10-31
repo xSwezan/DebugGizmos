@@ -6,6 +6,16 @@ local RayLine = DebugGizmos.Line{}
 local RayLine2 = DebugGizmos.Line{}
 local RayLine3 = DebugGizmos.Line{}
 
+local TextGizmoPart = workspace:WaitForChild("TextGizmo")
+
+local TextGizmo = DebugGizmos.Text{
+	Adornee = TextGizmoPart;
+
+	Text = tostring(TextGizmoPart.Position);
+	Size = 30;
+	Color = Color3.fromRGB(0,255,0);
+}
+
 local LastPoint1
 local LastPoint2
 local LastPoint3
@@ -17,6 +27,11 @@ local DidLoop = false
 
 RunService.RenderStepped:Connect(function(DT: number)
 	AllTime += DT
+
+	TextGizmo:Apply{
+		Text = tostring(TextGizmoPart.Position);
+		Visible = (math.floor(AllTime) % 2 == 1);
+	}
 
 	RayLine:Apply{
 		To = Vector3.new(0,math.cos(tick()) * 3,math.sin(tick()) * 4);

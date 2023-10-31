@@ -14,6 +14,8 @@ return function(Props: {}): PubTypes.LineGizmo
 
 		Color = Color3.fromRGB();
 		Transparency = .25;
+
+		Visible = true;
 	}
 
 	self:Apply(Props)
@@ -33,7 +35,7 @@ return function(Props: {}): PubTypes.LineGizmo
 
 		Adornment.CFrame = CFrame.lookAt(self.Props.From:Lerp(self.Props.To, .5), self.Props.To)
 
-		Adornment.Visible = (Visible == true)
+		Adornment.Visible = (Visible == true) and (self.Props.Visible)
 
 		Adornment.Adornee = Terrain
 		Adornment.Parent = GetOutput()

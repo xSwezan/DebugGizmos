@@ -44,4 +44,18 @@ export type SphereProps = {
 }
 export type SphereGizmo = Gizmo<{},SphereProps>
 
+export type TextProps = {
+	Position: Vector3?;
+	Offset: Vector3?;
+
+	Adornee: Instance?;
+
+	MaxDistance: number?;
+	
+	Text: string?;
+	Color: string?;
+	Size: number?;
+}
+export type TextGizmo = Gizmo<{},TextProps>
+
 return Types
