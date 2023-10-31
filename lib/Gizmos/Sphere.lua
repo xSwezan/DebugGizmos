@@ -14,6 +14,7 @@ return function(Props: {}): PubTypes.SphereGizmo
 		Color = Color3.fromRGB();
 		Transparency = .25;
 
+		Adornee = nil;
 		Visible = true;
 	}
 
@@ -35,7 +36,7 @@ return function(Props: {}): PubTypes.SphereGizmo
 
 		Adornment.Visible = (Visible == true) and (self.Props.Visible)
 
-		Adornment.Adornee = Terrain
+		Adornment.Adornee = self.Props.Adornee or Terrain
 		Adornment.Parent = GetOutput()
 	end
 

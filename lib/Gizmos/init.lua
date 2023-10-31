@@ -1,5 +1,6 @@
 local Janitor = require(script.Parent.Parent.Janitor)
 local GetVisible = require(script.Parent.Util.GetVisible)
+
 local GizmoClass = {}
 GizmoClass.__index = GizmoClass
 

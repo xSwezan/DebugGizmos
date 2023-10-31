@@ -15,6 +15,7 @@ return function(Props: {}): PubTypes.LineGizmo
 		Color = Color3.fromRGB();
 		Transparency = .25;
 
+		Adornee = nil;
 		Visible = true;
 	}
 
@@ -37,7 +38,7 @@ return function(Props: {}): PubTypes.LineGizmo
 
 		Adornment.Visible = (Visible == true) and (self.Props.Visible)
 
-		Adornment.Adornee = Terrain
+		Adornment.Adornee = self.Props.Adornee or Terrain
 		Adornment.Parent = GetOutput()
 	end
 

@@ -5,6 +5,7 @@ export type lib = {
 	Cone: (Props: ConeProps) -> ConeGizmo;
 	Sphere: (Props: SphereProps) -> SphereGizmo;
 	Text: (Props: TextProps) -> TextGizmo;
+	Box: (Props: BoxProps) -> BoxGizmo;
 }
 
 export type Gizmo<Class,Props> = Class & {
@@ -17,6 +18,9 @@ export type Gizmo<Class,Props> = Class & {
 export type DefaultProps = {
 	Color: Color3?;
 	Transparency: number?;
+
+	Adornee: Instance?;
+	Visible: boolean?;
 }
 
 -- Gizmos
@@ -48,14 +52,17 @@ export type TextProps = {
 	Position: Vector3?;
 	Offset: Vector3?;
 
-	Adornee: Instance?;
-
 	MaxDistance: number?;
 	
 	Text: string?;
-	Color: string?;
 	Size: number?;
 }
 export type TextGizmo = Gizmo<{},TextProps>
+
+export type BoxProps = {
+	CFrame: CFrame?;
+	Size: Vector3?;
+}
+export type BoxGizmo = Gizmo<{},BoxProps>
 
 return Types

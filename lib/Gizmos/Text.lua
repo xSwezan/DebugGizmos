@@ -10,14 +10,15 @@ return function(Props: {}): PubTypes.TextGizmo
 	local self: PubTypes.TextGizmo = Gizmos.new{
 		Position = Vector3.new();
 		Offset = Vector3.new();
-		Adornee = nil;
 		
 		MaxDistance = 100;
-
+		
 		Text = "Text";
 		Color = Color3.fromRGB(255,255,255);
+		Transparency = 0;
 		Size = 30;
-
+		
+		Adornee = nil;
 		Visible = true;
 	}
 
@@ -56,6 +57,7 @@ return function(Props: {}): PubTypes.TextGizmo
 		Label.Text = self.Props.Text
 		Label.TextColor3 = self.Props.Color
 		Label.TextSize = self.Props.Size
+		Label.TextTransparency = self.Props.Transparency
 
 		FloatingGizmo.Enabled = (Visible == true) and (self.Props.Visible)
 		FloatingGizmo.Parent = GetOutput()

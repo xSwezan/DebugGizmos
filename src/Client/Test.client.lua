@@ -16,6 +16,13 @@ local TextGizmo = DebugGizmos.Text{
 	Color = Color3.fromRGB(0,255,0);
 }
 
+local BoxCF = CFrame.new()
+local Box = DebugGizmos.Box{
+	Adornee = TextGizmoPart;
+	CFrame = BoxCF;
+	Size = Vector3.new(1,1,1);
+}
+
 local LastPoint1
 local LastPoint2
 local LastPoint3
@@ -28,6 +35,10 @@ local DidLoop = false
 RunService.RenderStepped:Connect(function(DT: number)
 	AllTime += DT
 
+	BoxCF *= CFrame.Angles(math.rad(DT * math.random(90)), math.rad(DT * math.random(90)), math.rad(DT * math.random(90)))
+	Box:Apply{
+		CFrame = BoxCF;
+	}
 	TextGizmo:Apply{
 		Text = tostring(TextGizmoPart.Position);
 		Visible = (math.floor(AllTime) % 2 == 1);
